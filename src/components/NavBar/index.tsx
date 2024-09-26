@@ -120,64 +120,59 @@ const Navbar = ({ blur }: { blur: boolean }) => {
   const isNavSearchInputVisible = useIsNavSearchInputVisible()
 
   return (
-    <>
-      {blur && <Blur />}
-      <Nav>
-        <Box display="flex" height="full" flexWrap="nowrap">
-          <Box className={styles.leftSideContainer}>
-            <Box className={styles.logoContainer}>
-              <a href="https://renq.io" target="_blank" >
-                <UniIcon
-                  width="48"
-                  height="48"
-                  data-testid="uniswap-logo"
-                  className={styles.logo}
-                // onClick={() => {
-                //   navigate({
-                //     pathname: '/',
-                //     search: '?intro=true',
-                //   })
-                // }}
-                />
-              </a>
+<>
+  {blur && <Blur />}
+  <Nav>
+    <Box display="flex" height="full" flexWrap="nowrap">
+      <Box className={styles.leftSideContainer}>
+        <Box className={styles.logoContainer}>
+          <a href="https://vitrastudios.com" target="_blank" rel="noopener noreferrer">
+            <img
+              src="/vítra.png" // Caminho para a imagem na pasta raiz
+              alt="VITRA Logo"
+              width="48"
+              height="48"
+              className={styles.logo}
+            />
+          </a>
 
-              {/* Renq Logo */}
-            </Box>
-            {!isNftPage && (
-              <Box display={{ sm: 'flex', lg: 'none' }}>
-                <ChainSelector leftAlign={true} />
-              </Box>
-            )}
-            <Row display={{ sm: 'none', lg: 'flex' }}>
-              <PageTabs />
-            </Row>
-          </Box>
-          <Box
-            className={styles.searchContainer}
-            {...(isNavSearchInputVisible && {
-              display: 'flex',
-            })}
-          >
-            {/* <SearchBar /> */}
-          </Box>
-          <Box className={styles.rightSideContainer}>
-            <Row gap="12">
-              <Box position="relative" display={isNavSearchInputVisible ? 'none' : { sm: 'flex' }}>
-                <SearchBar />
-              </Box>
-              {isNftPage && sellPageState !== ProfilePageStateType.LISTING && <Bag />}
-              {!isNftPage && (
-                <Box display={{ sm: 'none', lg: 'flex' }}>
-                  {/* <ChainSelector /> */}
-                </Box>
-              )}
-
-              <Web3Status />
-            </Row>
-          </Box>
+          {/* Renq Logo */}
         </Box>
-      </Nav>
-    </>
+        {!isNftPage && (
+          <Box display={{ sm: 'flex', lg: 'none' }}>
+            <ChainSelector leftAlign={true} />
+          </Box>
+        )}
+        <Row display={{ sm: 'none', lg: 'flex' }}>
+          <PageTabs />
+        </Row>
+      </Box>
+      <Box
+        className={styles.searchContainer}
+        {...(isNavSearchInputVisible && {
+          display: 'flex',
+        })}
+      >
+        {/* <SearchBar /> */}
+      </Box>
+      <Box className={styles.rightSideContainer}>
+        <Row gap="12">
+          <Box position="relative" display={isNavSearchInputVisible ? 'none' : { sm: 'flex' }}>
+            <SearchBar />
+          </Box>
+          {isNftPage && sellPageState !== ProfilePageStateType.LISTING && <Bag />}
+          {!isNftPage && (
+            <Box display={{ sm: 'none', lg: 'flex' }}>
+              {/* <ChainSelector /> */}
+            </Box>
+          )}
+
+          <Web3Status />
+        </Row>
+      </Box>
+    </Box>
+  </Nav>
+</>
   )
 }
 
