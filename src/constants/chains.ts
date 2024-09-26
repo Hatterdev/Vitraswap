@@ -24,6 +24,8 @@ export enum SupportedChainId {
   CELO_ALFAJORES = 44787,
 
   BNB = 56,
+
+  VITRA = 350, // Adicionando a Vitra Chain
 }
 
 export const UniWalletSupportedChains = [
@@ -31,6 +33,7 @@ export const UniWalletSupportedChains = [
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.OPTIMISM,
   SupportedChainId.POLYGON,
+  SupportedChainId.VITRA, // Adicionando Vitra Chain aqui
 ];
 
 export const CHAIN_IDS_TO_NAMES = {
@@ -46,6 +49,7 @@ export const CHAIN_IDS_TO_NAMES = {
   [SupportedChainId.OPTIMISM]: "optimism",
   [SupportedChainId.OPTIMISM_GOERLI]: "optimism_goerli",
   [SupportedChainId.BNB]: "bnb",
+  [SupportedChainId.VITRA]: "vitra", // Adicionando nome da Vitra Chain
 };
 
 /**
@@ -68,6 +72,7 @@ export const SUPPORTED_GAS_ESTIMATE_CHAIN_IDS = [
   SupportedChainId.OPTIMISM,
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.BNB,
+  SupportedChainId.VITRA, // Adicionando Vitra Chain aqui
 ] as const;
 
 /**
@@ -79,6 +84,7 @@ export const UNSUPPORTED_V2POOL_CHAIN_IDS = [
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.BNB,
   SupportedChainId.ARBITRUM_GOERLI,
+  SupportedChainId.VITRA, // Adicionando Vitra Chain aqui, se necessário
 ] as const;
 
 export const TESTNET_CHAIN_IDS = [
@@ -103,6 +109,7 @@ export const L1_CHAIN_IDS = [
   SupportedChainId.CELO,
   SupportedChainId.CELO_ALFAJORES,
   SupportedChainId.BNB,
+  SupportedChainId.VITRA, // Adicionando Vitra Chain aqui
 ] as const;
 
 export type SupportedL1ChainId = typeof L1_CHAIN_IDS[number];
@@ -128,3 +135,15 @@ export type SupportedL2ChainId = typeof L2_CHAIN_IDS[number];
 //     chainId === SupportedChainId.POLYGON_MUMBAI
 //   );
 // }
+
+O que foi adicionado:
+
+1. Enumeração SupportedChainId: Adicionamos VITRA = 350.
+
+
+2. Arrays de suporte: Atualizamos UniWalletSupportedChains, SUPPORTED_GAS_ESTIMATE_CHAIN_IDS, UNSUPPORTED_V2POOL_CHAIN_IDS, L1_CHAIN_IDS, e CHAIN_IDS_TO_NAMES para incluir a Vitra Chain.
+
+
+
+Essa modificação deve garantir que a Vitra Chain esteja suportada nas várias funcionalidades definidas no seu código.
+
