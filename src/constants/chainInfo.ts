@@ -91,6 +91,21 @@ const CHAIN_INFO: ChainInfoMap = {
     nativeCurrency: { name: 'Sepolia Ether', symbol: 'SepoliaETH', decimals: 18 },
     color: darkTheme.chain_5,
   },
+  [SupportedChainId.VITRA]: {
+    networkType: NetworkType.L1,
+    blockWaitMsBeforeWarning: ms`10m`, // ou ajuste conforme necessário
+    bridge: 'https://bridge.vitrachain.com/', // substitua pelo link correto
+    docs: 'https://docs.vitrachain.org/', // substitua pelo link correto
+    explorer: 'https://mainnet.vitrascan.com/', // substitua pelo link correto
+    infoLink: 'https://info.vitrachain.org/', // substitua pelo link correto
+    label: 'VITRA',
+    logoUrl: 'caminho/para/o/logo/vitra.png', // adicione a URL do logo da VITRA
+    circleLogoUrl: 'caminho/para/o/logo/circle_vitra.png', // adicione a URL do logo circular da VITRA, se disponível
+    squareLogoUrl: 'caminho/para/o/logo/square_vitra.png', // adicione a URL do logo quadrado da VITRA, se disponível
+    nativeCurrency: { name: 'VITRA Token', symbol: 'VITRA', decimals: 18 },
+    color: darkTheme.chain_X, // escolha uma cor adequada
+    backgroundColor: darkTheme.chain_X_background, // escolha uma cor de fundo adequada
+  },
   [SupportedChainId.OPTIMISM]: {
     networkType: NetworkType.L2,
     blockWaitMsBeforeWarning: ms`25m`,
